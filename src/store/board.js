@@ -20,9 +20,6 @@ const BoardSection = types
         const { id: boardID } = getParent(self, 2);
         const { id: status } = self;
 
-        const { id: tryParent } = getParent(self, 1);
-        console.log('try', tryParent);
-
         const { tasks } = yield apiCall.get(`boards/${boardID}/tasks/${status}`);
 
         self.tasks = tasks;
